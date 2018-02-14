@@ -1,9 +1,9 @@
 #!/usr/bin/ruby
 
 class Item
-    @@list = []
+  @@list = []
 
-    attr_accessor :name
+  attr_accessor :name
 
   def initialize(name)
     @name = name
@@ -13,8 +13,8 @@ class Item
     @@list
   end
 
-  # def self.find(name)
-  # end
-  #
-  # def method_name()
+  def save()
+   @@list.push(self)
+ end
+
 end
