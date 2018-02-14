@@ -23,7 +23,7 @@ describe("Item") do
   describe(".clear") do
     it("clears all items from the list") do
       item = Item.new("tacos", 1)
-      item.save()
+      item.savy()
       Item.clear()
       expect(Item.all()).to(eq([]))
     end

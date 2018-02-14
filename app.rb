@@ -18,7 +18,7 @@ post('/') do
   name = params["name"]
   rank = params["rank"]
   item = Item.new(name, rank)
-  item.save()
+  item.savy(name)
   Item.sortify()
   @list = Item.all()
   erb(:input)

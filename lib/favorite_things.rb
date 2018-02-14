@@ -19,15 +19,23 @@ class Item
   def save()
     @@list.push(self)
   end
-  # 
-  # def self.save(name)
-  #   item_id = id.to_i()
-  #   @@list.each do |item|
-  #     if item.id == item_id
-  #       return item
-  #     end
-  #   end
-  # end
+
+  def savy(name)
+    exists = false
+    item_name = name
+    if @@list == []
+      @@list.push(self)
+    else
+      @@list.each do |each_item|
+        if each_item.name == item_name
+          exists = true
+        end
+      end
+      if exists == false
+        @@list.push(self)
+      end
+    end
+  end
 
   def self.sortify()
     @@list = @@list.sort_by {|item| item.rank}
