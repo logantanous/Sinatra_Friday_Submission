@@ -14,7 +14,11 @@ class Item
   end
 
   def save()
-   @@list.push(self)
+    @@list.push(self)
+  end
+
+ def self.clear()
+   @@list = []
  end
 
 end
