@@ -1,14 +1,14 @@
 #!/usr/bin/ruby
 
-class Item
+class Word
   @@list = []
   attr_reader :id
   attr_accessor :name
-  attr_accessor :rank
+  attr_accessor :definition
 
-  def initialize(name, rank)
+  def initialize(name, definition)
     @name = name
-    @rank = rank
+    @definition = definition
     @id = @@list.length + 1
   end
 
@@ -22,12 +22,12 @@ class Item
 
   def savy(name)
     exists = false
-    item_name = name
+    word_name = name
     if @@list == []
       @@list.push(self)
     else
       @@list.each do |each_item|
-        if each_item.name == item_name
+        if each_item.name == word_name
           exists = true
         end
       end
@@ -38,7 +38,7 @@ class Item
   end
 
   def self.sortify()
-    @@list = @@list.sort_by {|item| item.rank}
+    @@list = @@list.sort_by {|item| item.definition}
   end
 
   def self.clear()

@@ -1,25 +1,25 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**.*.rb')
-require('./lib/favorite_things')
+require('./lib/word')
 require('pry')
 
 get('/') do
-  @list = Item.all()
+  @list = Word.all()
   erb(:input)
 end
 
-get('/items/:id') do
-  @item = Item.find(params[:id])
+get('/words/:id') do
+  @item = Word.find(params[:id])
   erb(:item)
 end
 
 post('/') do
   name = params["name"]
-  rank = params["rank"]
-  item = Item.new(name, rank)
+  definition = params["definition"]
+  item = Word.new(name, definition)
   item.savy(name)
-  Item.sortify()
-  @list = Item.all()
+  Word.sortify()
+  @list = Word.all()
   erb(:input)
 end
