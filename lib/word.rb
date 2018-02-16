@@ -16,10 +16,6 @@ class Word
     @@list
   end
 
-  def save()
-    @@list.push(self)
-  end
-
   def savy(name)
     exists = false
     word_name = name
