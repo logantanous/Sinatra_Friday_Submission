@@ -18,7 +18,7 @@ post('/') do
   name = params["name"]
   definition = params["definition"]
   item = Word.new(name, definition)
-  item.savy(name)
+  item.save()
   Word.sortify()
   @list = Word.all()
   erb(:input)

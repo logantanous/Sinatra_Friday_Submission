@@ -16,9 +16,9 @@ class Word
     @@list
   end
 
-  def savy(name)
+  def save()
     exists = false
-    word_name = name
+    word_name = @name
     if @@list == []
       @@list.push(self)
     else
