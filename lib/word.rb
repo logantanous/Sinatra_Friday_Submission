@@ -34,7 +34,7 @@ class Word
   end
 
   def self.sortify()
-    @@list = @@list.sort_by {|item| item.definition}
+    @@list = @@list.sort_by {|item| item.name}
   end
 
   def self.clear()
