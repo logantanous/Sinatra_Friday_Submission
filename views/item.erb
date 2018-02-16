@@ -1,1 +1,9 @@
-<h1>id:<%= @item.id %> name:<%= @item.name %> definition:<%= @item.definition %></h1>
+<h1>id:<%= @@item.id %> name:<%= @@item.name %> definition:<%= @@item.definition %></h1>
+
+<form action="/more_definitions" method="post">
+  <div class="form-group">
+    <label for="definition2">Add more definitions</label>
+    <input id="definition2" name="definition2" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Go!</button>
+</form>

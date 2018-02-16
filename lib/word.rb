@@ -33,6 +33,7 @@ class Word
     end
   end
 
+
   def self.sortify()
     @@list = @@list.sort_by {|item| item.name}
   end
